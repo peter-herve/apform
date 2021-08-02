@@ -15,3 +15,5 @@ jobs:
           apiKey: ${{ secrets.postmanApiKey }}
           collection: postman_collection.json
           environment: 5922408-228c7edd-fc15-4f68-9665-a35d7df6945b
+      - run: npm install -g newman
+      - run: newman run ./postman/postman_collection.json -e ./postman/postman_environment.json
